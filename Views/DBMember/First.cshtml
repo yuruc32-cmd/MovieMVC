@@ -1,0 +1,123 @@
+﻿@model _1121754.Models.Members
+@{
+    ViewData["Title"] = "First";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>登入 / 註冊</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        .card {
+            margin-bottom: 30px;
+        }
+
+        .form-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+    @if (TempData["LoginRequired"] != null)
+    {
+        <script>
+            alert(@Html.Raw($"'{TempData["LoginRequired"]}'"));
+        </script>
+    }
+</head>
+<body>
+    <div class="container form-container">
+        <!-- 登入區塊 -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="form-title">登入</h4>
+                <form asp-action="Login" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">帳號</label>
+                        <input type="text" name="name" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">密碼</label>
+                        <input type="password" name="password" class="form-control" required />
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">登入</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 預設帳密提示區塊 -->
+        <div class="card mt-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">測試帳號資訊</h5>
+                <p>
+                    <strong>使用者登入</strong><br />
+                    帳號: A<br />
+                    密碼: 123
+                </p>
+                <p>
+                    <strong>管理者登入</strong><br />
+                    帳號: admin<br />
+                    密碼: admin123
+                </p>
+            </div>
+        </div>
+
+        <!-- 註冊區塊 -->
+        <div class="card shadow-sm mt-4">
+            <div class="card-body">
+                <h4 class="form-title">註冊</h4>
+                <form asp-action="Register" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">帳號</label>
+                        <input type="text" name="name" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">密碼</label>
+                        <input type="password" name="password" class="form-control" required />
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">註冊</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center">
+                @ViewBag.Error
+            </div>
+        }
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success text-center">
+                @TempData["Success"]
+            </div>
+        }
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["Error"]
+        </div>
+    }
+</body>
+</html>

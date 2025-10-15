@@ -1,0 +1,85 @@
+﻿@model IEnumerable<_1121754.Models.Movie>
+
+@{
+    ViewData["Title"] = "電影列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pagedList = (IPagedList)ViewBag.usersModel;
+    var userId = Context.Session.GetInt32("UserId");
+}
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Fluent;
+
+<h1 class="text-center mb-4"><i class="bi bi-camera-reels-fill text-primary"></i> 電影介紹</h1>
+
+<br />
+@{//if (userId != null)
+//{
+    //<a class="btn btn-info" href="@Url.Action("MyBooking", "DBMember")">查看我的預約</a>
+
+//}
+}
+<br />
+<div class="row">
+    @foreach (var item in Model.OrderBy(u => u.Movie_Id))
+    {
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="headshot">
+                    <img src="~/images/@(item.Movie_Id).jpg" alt="Headshot of @item.Movie_Name" class="img-fluid" />
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">@item.Movie_Name</h3>
+                    <h5 class="card-text">@Html.Raw(item.Movie_Introd.Replace("\\n", "<br/>"))</h5>
+
+
+
+
+                    <a asp-controller="DBMember" asp-action="Booking" asp-route-id="@item.Movie_Id" class="btn btn-primary mt-2">我要預約</a>
+                </div>
+                
+
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+<table>
+    <tfoot>
+        <tr>
+            <td class="text-muted" colspan="5">
+                第 @(pagedList.PageCount < pagedList.PageNumber ? 0 : pagedList.PageNumber) 頁，共 @pagedList.PageCount 頁。
+                每頁 @pagedList.PageSize 筆資料，全部共有 @pagedList.TotalItemCount 筆資料。
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div style="text-align:center">
+    @(Html.PagedListPager(pagedList, page => Url.Action("IndexPage", new { page }), new PagedListRenderOptions
+{
+    DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+    DisplayLinkToLastPage = PagedListDisplayMode.Always,
+    DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+    DisplayLinkToNextPage = PagedListDisplayMode.Always,
+    DisplayLinkToIndividualPages = true,
+    DisplayPageCountAndCurrentLocation = false,
+    MaximumPageNumbersToDisplay = 10,
+    EllipsesFormat = "...",
+    LinkToFirstPageFormat = "第一頁",
+    LinkToPreviousPageFormat = "前一頁",
+    LinkToNextPageFormat = "後一頁",
+    LinkToLastPageFormat = "最後一頁",
+    PageClasses = new[] { "page-link" },
+    UlElementClasses = new[] { "pagination" },
+    LiElementClasses = new[] { "page-item" },
+    
+}))
+</div>
+
+@section topCSS {
+    <link href="~/css/Card.css" rel="stylesheet" />
+}

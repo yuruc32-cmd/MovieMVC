@@ -1,0 +1,61 @@
+﻿@model _1121754.Models.Members
+
+@{
+    ViewData["Title"] = "編輯預約";
+}
+
+<h2 class="text-center mb-4">🎬 編輯預約資訊</h2>
+
+<div class="container d-flex justify-content-center">
+    <div class="card shadow p-4" style="max-width: 600px; width: 100%;">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="BookingId" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="form-label fw-bold">姓名</label>
+                <input asp-for="Name" class="form-control bg-light" readonly placeholder="使用者姓名" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label fw-bold">密碼</label>
+                <input asp-for="Password" class="form-control bg-light" readonly placeholder="已設定的密碼" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Movie" class="form-label fw-bold">電影名稱</label>
+                <input asp-for="Movie" class="form-control" placeholder="請輸入電影名稱" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Time" class="form-label fw-bold">時間</label>
+                <input asp-for="Time" class="form-control" placeholder="請輸入場次時間" />
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="Ticket" class="form-label fw-bold">票數</label>
+                <input asp-for="Ticket" class="form-control" placeholder="請輸入票數" />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4">💾 儲存變更</button>
+                <a asp-action="Index" class="btn btn-secondary ms-2">返回列表</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section topCSS {
+    <style>
+        .card {
+            border-radius: 1rem;
+        }
+
+        .form-label {
+            font-size: 1rem;
+        }
+
+        input[readonly] {
+            cursor: not-allowed;
+        }
+    </style>
+}

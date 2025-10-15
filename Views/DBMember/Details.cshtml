@@ -1,0 +1,54 @@
+﻿@model _1121754.Models.Members
+
+@{
+    ViewData["Title"] = "詳細資料";
+}
+
+<h1 class="text-center mb-4">🎟️ 預約詳細資料</h1>
+
+<div class="container d-flex justify-content-center">
+    <div class="card shadow p-4" style="max-width: 600px; width: 100%;">
+        <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0">@Model.Name 的預約資訊</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-4">姓名</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-4">電影</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Movie)</dd>
+
+                <dt class="col-sm-4">時間</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Time)</dd>
+
+                <dt class="col-sm-4">張數</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Ticket)</dd>
+
+                <dt class="col-sm-4">密碼</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Password)</dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.BookingId" class="btn btn-warning me-2">編輯</a> |
+            
+            <a asp-action="Index" class="btn btn-secondary">返回清單</a>
+        </div>
+    </div>
+</div>
+
+@section topCSS {
+    <style>
+        .card {
+            border-radius: 1rem;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        .btn-warning {
+            color: #fff;
+        }
+    </style>
+}

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "預約電影";
+    var movie = ViewBag.Movie;
+    var userId = ViewBag.UserId;
+}
+
+<h2>預約電影</h2>
+
+@if (movie != null)
+{
+    <p>電影名稱：@movie.Movie_Name</p>
+    <p>電影代號：@movie.Movie_Id</p>
+
+    <form method="post" asp-action="Booking">
+        <input type="hidden" name="userId" value="@userId" />
+        <input type="hidden" name="movie" value="@movie.Movie_Name" />
+
+        <label for="time">預約時間場次：</label>
+        <input type="text" id="time" name="time" placeholder="請輸入時間場次(數字)" required />
+        <br />
+
+        <label for="ticket">票數：</label>
+        <input type="number" id="ticket" name="ticket" min="1" required />
+
+        <button type="submit">確認預約</button>
+    </form>
+}
+else
+{
+    <p style="color:red;">電影資訊載入失敗，請返回上一頁</p>
+}

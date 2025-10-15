@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "SelectQuery";
+}
+
+<h1>下拉式查詢</h1>
+<hr />
+<form method="post" action="@Url.Action("SelectName")">
+    <div class="form-group">
+        <label for="fCity " class="control-label col-md-2"><h4>電影名字</h4></label>
+        <div class="col-md-10">
+            <select id="Movie" name="Movie">
+                @foreach (var item in ViewBag.Mylist)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+            &emsp;<input type="submit" value="查詢" class="btn btn-primary" />
+        </div>
+    </div>
+
+</form>
+

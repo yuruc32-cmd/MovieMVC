@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>1121754</title>
+    <style>
+        #navigateButton {
+            background-color: #5A5AAD;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        曾裕茹1121754<br />
+        <a href=" ../DBMember/IndexPage">前往專題</a><br /><br />
+        <br />
+        <button id="navigateButton">前往專題頁面</button>
+        <script>
+            document.getElementById('navigateButton').onclick = function () {
+                var baseUrl = window.location.origin;
+                window.location.href = baseUrl + '/DBMember/IndexPage';
+            };
+        </script>
+
+    </center>
+</body>
+</html>
