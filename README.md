@@ -12,3 +12,21 @@
 最後，這個作業也讓我體會到**前端設計與使用者體驗**的重要性。從登入頁面的排版、卡片設計，到預約清單表格的呈現，再到刪除操作的確認提示，每一個小細節都會影響使用者的感受。我學會了如何使用Bootstrap快速建立美觀且直覺的介面，也理解了CSS與Razor結合的技巧。
 
 總結來說，這次作業讓我從理論走向實作，全面體驗了MVC架構下的專案流程，從資料操作、控制流程到前端呈現都能親手完成。未來我希望可以加強資料驗證、安全性設計，以及前端互動體驗，讓系統更完整、穩健，也更加貼近真實商業應用場景。
+
+執行畫面
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d0cb778f-c73e-473d-a5a5-b62156f4b6c5" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/960d005d-401c-43bd-84da-17302ca4c420" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1596cd9f-aa61-4746-9467-f040d18ff5e4" />
+
+<img width="1915" height="523" alt="image" src="https://github.com/user-attachments/assets/ae1ecd9b-33e6-4702-a3b4-daf6ff5149d3" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac9e06d7-f86d-4970-8367-528a18cb4943" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acc179a3-6522-427d-bfdd-49053dd12932" />
+
+
+
