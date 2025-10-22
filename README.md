@@ -16,10 +16,9 @@
 執行畫面
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d0cb778f-c73e-473d-a5a5-b62156f4b6c5" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/960d005d-401c-43bd-84da-17302ca4c420" />
-
-
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1596cd9f-aa61-4746-9467-f040d18ff5e4" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/960d005d-401c-43bd-84da-17302ca4c420" />
 
 <img width="1915" height="523" alt="image" src="https://github.com/user-attachments/assets/ae1ecd9b-33e6-4702-a3b4-daf6ff5149d3" />
 
