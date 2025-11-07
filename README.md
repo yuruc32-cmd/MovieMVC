@@ -14,6 +14,7 @@
 總結來說，這次作業讓我從理論走向實作，全面體驗了MVC架構下的專案流程，從資料操作、控制流程到前端呈現都能親手完成。未來我希望可以加強資料驗證、安全性設計，以及前端互動體驗，讓系統更完整、穩健，也更加貼近真實商業應用場景。
 
 執行畫面   影片：https://youtu.be/xV3WSs9OMvw?si=VYdGs0YB-N66G1yR
+
 截圖：
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d0cb778f-c73e-473d-a5a5-b62156f4b6c5" />
 
